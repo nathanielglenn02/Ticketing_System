@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "TicketingService", targetNamespace = "http://server.com/", wsdlLocation = "http://localhost:8080/Ticketing-System-Server/TicketingService?WSDL")
+@WebServiceClient(name = "TicketingService", targetNamespace = "http://server.com/", wsdlLocation = "http://localhost:8080/Ticketing-System-Server/TicketingService?wsdl")
 public class TicketingService_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class TicketingService_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/Ticketing-System-Server/TicketingService?WSDL");
+            url = new URL("http://localhost:8080/Ticketing-System-Server/TicketingService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -3,6 +3,7 @@ package ticketing.system.client;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -17,9 +18,11 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="is_topup" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *         &lt;element name="jumlah" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *         &lt;element name="notaAcara" type="{http://server.com/}notaAcara" minOccurs="0"/&gt;
  *         &lt;element name="notaParkir" type="{http://server.com/}notaParkir" minOccurs="0"/&gt;
+ *         &lt;element name="tanggal_topup" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="user" type="{http://server.com/}user" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -32,17 +35,23 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "historyTransaksi", propOrder = {
     "id",
+    "isTopup",
     "jumlah",
     "notaAcara",
     "notaParkir",
+    "tanggalTopup",
     "user"
 })
 public class HistoryTransaksi {
 
     protected int id;
+    @XmlElement(name = "is_topup")
+    protected Boolean isTopup;
     protected double jumlah;
     protected NotaAcara notaAcara;
     protected NotaParkir notaParkir;
+    @XmlElement(name = "tanggal_topup")
+    protected String tanggalTopup;
     protected User user;
 
     /**
@@ -59,6 +68,30 @@ public class HistoryTransaksi {
      */
     public void setId(int value) {
         this.id = value;
+    }
+
+    /**
+     * Gets the value of the isTopup property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isIsTopup() {
+        return isTopup;
+    }
+
+    /**
+     * Sets the value of the isTopup property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setIsTopup(Boolean value) {
+        this.isTopup = value;
     }
 
     /**
@@ -123,6 +156,30 @@ public class HistoryTransaksi {
      */
     public void setNotaParkir(NotaParkir value) {
         this.notaParkir = value;
+    }
+
+    /**
+     * Gets the value of the tanggalTopup property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTanggalTopup() {
+        return tanggalTopup;
+    }
+
+    /**
+     * Sets the value of the tanggalTopup property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTanggalTopup(String value) {
+        this.tanggalTopup = value;
     }
 
     /**

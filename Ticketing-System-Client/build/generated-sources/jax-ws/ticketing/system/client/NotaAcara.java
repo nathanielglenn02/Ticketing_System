@@ -21,6 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="harga" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="jumlah" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *         &lt;element name="tanggal_Transaksi" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="user" type="{http://server.com/}user" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -37,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
     "harga",
     "id",
     "jumlah",
+    "status",
     "tanggalTransaksi",
     "user"
 })
@@ -46,6 +48,7 @@ public class NotaAcara {
     protected double harga;
     protected int id;
     protected int jumlah;
+    protected Boolean status;
     @XmlElement(name = "tanggal_Transaksi")
     protected String tanggalTransaksi;
     protected User user;
@@ -120,6 +123,30 @@ public class NotaAcara {
      */
     public void setJumlah(int value) {
         this.jumlah = value;
+    }
+
+    /**
+     * Gets the value of the status property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isStatus() {
+        return status;
+    }
+
+    /**
+     * Sets the value of the status property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setStatus(Boolean value) {
+        this.status = value;
     }
 
     /**

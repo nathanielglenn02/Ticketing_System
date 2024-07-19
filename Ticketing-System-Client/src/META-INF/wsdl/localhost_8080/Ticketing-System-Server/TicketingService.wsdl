@@ -4,23 +4,29 @@
 <xsd:import namespace="http://server.com/" schemaLocation="http://localhost:8080/Ticketing-System-Server/TicketingService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="updateUser">
-<part name="parameters" element="tns:updateUser"/>
-</message>
-<message name="updateUserResponse">
-<part name="parameters" element="tns:updateUserResponse"/>
-</message>
 <message name="BacaDataNotaAcaraBelumKlaim">
 <part name="parameters" element="tns:BacaDataNotaAcaraBelumKlaim"/>
 </message>
 <message name="BacaDataNotaAcaraBelumKlaimResponse">
 <part name="parameters" element="tns:BacaDataNotaAcaraBelumKlaimResponse"/>
 </message>
-<message name="TambahNotaParkir">
-<part name="parameters" element="tns:TambahNotaParkir"/>
+<message name="BacaDataNotaAcara">
+<part name="parameters" element="tns:BacaDataNotaAcara"/>
 </message>
-<message name="TambahNotaParkirResponse">
-<part name="parameters" element="tns:TambahNotaParkirResponse"/>
+<message name="BacaDataNotaAcaraResponse">
+<part name="parameters" element="tns:BacaDataNotaAcaraResponse"/>
+</message>
+<message name="CekKetersediaanSlotParkir">
+<part name="parameters" element="tns:CekKetersediaanSlotParkir"/>
+</message>
+<message name="CekKetersediaanSlotParkirResponse">
+<part name="parameters" element="tns:CekKetersediaanSlotParkirResponse"/>
+</message>
+<message name="ClaimTicketAcara">
+<part name="parameters" element="tns:ClaimTicketAcara"/>
+</message>
+<message name="ClaimTicketAcaraResponse">
+<part name="parameters" element="tns:ClaimTicketAcaraResponse"/>
 </message>
 <message name="TambahNotaAcara">
 <part name="parameters" element="tns:TambahNotaAcara"/>
@@ -34,6 +40,18 @@
 <message name="TambahTopUpResponse">
 <part name="parameters" element="tns:TambahTopUpResponse"/>
 </message>
+<message name="updateUser">
+<part name="parameters" element="tns:updateUser"/>
+</message>
+<message name="updateUserResponse">
+<part name="parameters" element="tns:updateUserResponse"/>
+</message>
+<message name="getAcara">
+<part name="parameters" element="tns:getAcara"/>
+</message>
+<message name="getAcaraResponse">
+<part name="parameters" element="tns:getAcaraResponse"/>
+</message>
 <message name="getParkir">
 <part name="parameters" element="tns:getParkir"/>
 </message>
@@ -45,24 +63,6 @@
 </message>
 <message name="getUserByIdResponse">
 <part name="parameters" element="tns:getUserByIdResponse"/>
-</message>
-<message name="ClaimTicketAcara">
-<part name="parameters" element="tns:ClaimTicketAcara"/>
-</message>
-<message name="ClaimTicketAcaraResponse">
-<part name="parameters" element="tns:ClaimTicketAcaraResponse"/>
-</message>
-<message name="getJam_Parkir">
-<part name="parameters" element="tns:getJam_Parkir"/>
-</message>
-<message name="getJam_ParkirResponse">
-<part name="parameters" element="tns:getJam_ParkirResponse"/>
-</message>
-<message name="getAcara">
-<part name="parameters" element="tns:getAcara"/>
-</message>
-<message name="getAcaraResponse">
-<part name="parameters" element="tns:getAcaraResponse"/>
 </message>
 <message name="getAcaraByNama">
 <part name="parameters" element="tns:getAcaraByNama"/>
@@ -76,17 +76,17 @@
 <message name="getSlotParkirResponse">
 <part name="parameters" element="tns:getSlotParkirResponse"/>
 </message>
-<message name="CekKetersediaanSlotParkir">
-<part name="parameters" element="tns:CekKetersediaanSlotParkir"/>
+<message name="TambahNotaParkir">
+<part name="parameters" element="tns:TambahNotaParkir"/>
 </message>
-<message name="CekKetersediaanSlotParkirResponse">
-<part name="parameters" element="tns:CekKetersediaanSlotParkirResponse"/>
+<message name="TambahNotaParkirResponse">
+<part name="parameters" element="tns:TambahNotaParkirResponse"/>
 </message>
-<message name="BacaDataNotaAcara">
-<part name="parameters" element="tns:BacaDataNotaAcara"/>
+<message name="getJam_Parkir">
+<part name="parameters" element="tns:getJam_Parkir"/>
 </message>
-<message name="BacaDataNotaAcaraResponse">
-<part name="parameters" element="tns:BacaDataNotaAcaraResponse"/>
+<message name="getJam_ParkirResponse">
+<part name="parameters" element="tns:getJam_ParkirResponse"/>
 </message>
 <message name="dataHistoryTransaksi">
 <part name="parameters" element="tns:dataHistoryTransaksi"/>
@@ -95,17 +95,21 @@
 <part name="parameters" element="tns:dataHistoryTransaksiResponse"/>
 </message>
 <portType name="TicketingService">
-<operation name="updateUser">
-<input wsam:Action="http://server.com/TicketingService/updateUserRequest" message="tns:updateUser"/>
-<output wsam:Action="http://server.com/TicketingService/updateUserResponse" message="tns:updateUserResponse"/>
-</operation>
 <operation name="BacaDataNotaAcaraBelumKlaim">
 <input wsam:Action="http://server.com/TicketingService/BacaDataNotaAcaraBelumKlaimRequest" message="tns:BacaDataNotaAcaraBelumKlaim"/>
 <output wsam:Action="http://server.com/TicketingService/BacaDataNotaAcaraBelumKlaimResponse" message="tns:BacaDataNotaAcaraBelumKlaimResponse"/>
 </operation>
-<operation name="TambahNotaParkir">
-<input wsam:Action="http://server.com/TicketingService/TambahNotaParkirRequest" message="tns:TambahNotaParkir"/>
-<output wsam:Action="http://server.com/TicketingService/TambahNotaParkirResponse" message="tns:TambahNotaParkirResponse"/>
+<operation name="BacaDataNotaAcara">
+<input wsam:Action="http://server.com/TicketingService/BacaDataNotaAcaraRequest" message="tns:BacaDataNotaAcara"/>
+<output wsam:Action="http://server.com/TicketingService/BacaDataNotaAcaraResponse" message="tns:BacaDataNotaAcaraResponse"/>
+</operation>
+<operation name="CekKetersediaanSlotParkir">
+<input wsam:Action="http://server.com/TicketingService/CekKetersediaanSlotParkirRequest" message="tns:CekKetersediaanSlotParkir"/>
+<output wsam:Action="http://server.com/TicketingService/CekKetersediaanSlotParkirResponse" message="tns:CekKetersediaanSlotParkirResponse"/>
+</operation>
+<operation name="ClaimTicketAcara">
+<input wsam:Action="http://server.com/TicketingService/ClaimTicketAcaraRequest" message="tns:ClaimTicketAcara"/>
+<output wsam:Action="http://server.com/TicketingService/ClaimTicketAcaraResponse" message="tns:ClaimTicketAcaraResponse"/>
 </operation>
 <operation name="TambahNotaAcara">
 <input wsam:Action="http://server.com/TicketingService/TambahNotaAcaraRequest" message="tns:TambahNotaAcara"/>
@@ -115,6 +119,14 @@
 <input wsam:Action="http://server.com/TicketingService/TambahTopUpRequest" message="tns:TambahTopUp"/>
 <output wsam:Action="http://server.com/TicketingService/TambahTopUpResponse" message="tns:TambahTopUpResponse"/>
 </operation>
+<operation name="updateUser">
+<input wsam:Action="http://server.com/TicketingService/updateUserRequest" message="tns:updateUser"/>
+<output wsam:Action="http://server.com/TicketingService/updateUserResponse" message="tns:updateUserResponse"/>
+</operation>
+<operation name="getAcara">
+<input wsam:Action="http://server.com/TicketingService/getAcaraRequest" message="tns:getAcara"/>
+<output wsam:Action="http://server.com/TicketingService/getAcaraResponse" message="tns:getAcaraResponse"/>
+</operation>
 <operation name="getParkir">
 <input wsam:Action="http://server.com/TicketingService/getParkirRequest" message="tns:getParkir"/>
 <output wsam:Action="http://server.com/TicketingService/getParkirResponse" message="tns:getParkirResponse"/>
@@ -122,18 +134,6 @@
 <operation name="getUserById">
 <input wsam:Action="http://server.com/TicketingService/getUserByIdRequest" message="tns:getUserById"/>
 <output wsam:Action="http://server.com/TicketingService/getUserByIdResponse" message="tns:getUserByIdResponse"/>
-</operation>
-<operation name="ClaimTicketAcara">
-<input wsam:Action="http://server.com/TicketingService/ClaimTicketAcaraRequest" message="tns:ClaimTicketAcara"/>
-<output wsam:Action="http://server.com/TicketingService/ClaimTicketAcaraResponse" message="tns:ClaimTicketAcaraResponse"/>
-</operation>
-<operation name="getJam_Parkir">
-<input wsam:Action="http://server.com/TicketingService/getJam_ParkirRequest" message="tns:getJam_Parkir"/>
-<output wsam:Action="http://server.com/TicketingService/getJam_ParkirResponse" message="tns:getJam_ParkirResponse"/>
-</operation>
-<operation name="getAcara">
-<input wsam:Action="http://server.com/TicketingService/getAcaraRequest" message="tns:getAcara"/>
-<output wsam:Action="http://server.com/TicketingService/getAcaraResponse" message="tns:getAcaraResponse"/>
 </operation>
 <operation name="getAcaraByNama">
 <input wsam:Action="http://server.com/TicketingService/getAcaraByNamaRequest" message="tns:getAcaraByNama"/>
@@ -143,13 +143,13 @@
 <input wsam:Action="http://server.com/TicketingService/getSlotParkirRequest" message="tns:getSlotParkir"/>
 <output wsam:Action="http://server.com/TicketingService/getSlotParkirResponse" message="tns:getSlotParkirResponse"/>
 </operation>
-<operation name="CekKetersediaanSlotParkir">
-<input wsam:Action="http://server.com/TicketingService/CekKetersediaanSlotParkirRequest" message="tns:CekKetersediaanSlotParkir"/>
-<output wsam:Action="http://server.com/TicketingService/CekKetersediaanSlotParkirResponse" message="tns:CekKetersediaanSlotParkirResponse"/>
+<operation name="TambahNotaParkir">
+<input wsam:Action="http://server.com/TicketingService/TambahNotaParkirRequest" message="tns:TambahNotaParkir"/>
+<output wsam:Action="http://server.com/TicketingService/TambahNotaParkirResponse" message="tns:TambahNotaParkirResponse"/>
 </operation>
-<operation name="BacaDataNotaAcara">
-<input wsam:Action="http://server.com/TicketingService/BacaDataNotaAcaraRequest" message="tns:BacaDataNotaAcara"/>
-<output wsam:Action="http://server.com/TicketingService/BacaDataNotaAcaraResponse" message="tns:BacaDataNotaAcaraResponse"/>
+<operation name="getJam_Parkir">
+<input wsam:Action="http://server.com/TicketingService/getJam_ParkirRequest" message="tns:getJam_Parkir"/>
+<output wsam:Action="http://server.com/TicketingService/getJam_ParkirResponse" message="tns:getJam_ParkirResponse"/>
 </operation>
 <operation name="dataHistoryTransaksi">
 <input wsam:Action="http://server.com/TicketingService/dataHistoryTransaksiRequest" message="tns:dataHistoryTransaksi"/>
@@ -158,15 +158,6 @@
 </portType>
 <binding name="TicketingServicePortBinding" type="tns:TicketingService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="updateUser">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="BacaDataNotaAcaraBelumKlaim">
 <soap:operation soapAction=""/>
 <input>
@@ -176,7 +167,25 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="TambahNotaParkir">
+<operation name="BacaDataNotaAcara">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="CekKetersediaanSlotParkir">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ClaimTicketAcara">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -203,6 +212,24 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="updateUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getAcara">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="getParkir">
 <soap:operation soapAction=""/>
 <input>
@@ -213,33 +240,6 @@
 </output>
 </operation>
 <operation name="getUserById">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="ClaimTicketAcara">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getJam_Parkir">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getAcara">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -266,7 +266,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="CekKetersediaanSlotParkir">
+<operation name="TambahNotaParkir">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -275,7 +275,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="BacaDataNotaAcara">
+<operation name="getJam_Parkir">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

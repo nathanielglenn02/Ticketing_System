@@ -60,24 +60,6 @@
 
 <xs:element name="updateUserResponse" type="tns:updateUserResponse"/>
 
-<xs:complexType name="getJam_Parkir">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getJam_ParkirResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:jamParkir" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="jamParkir">
-<xs:sequence>
-<xs:element name="id" type="xs:int"/>
-<xs:element name="jam_mulai" type="xs:string" minOccurs="0"/>
-<xs:element name="jam_selesai" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="getSlotParkir">
 <xs:sequence>
 <xs:element name="idParkir" type="xs:int"/>
@@ -103,6 +85,24 @@
 <xs:element name="id" type="xs:int"/>
 <xs:element name="lokasi" type="xs:string" minOccurs="0"/>
 <xs:element name="nama" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getJam_Parkir">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getJam_ParkirResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:jamParkir" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jamParkir">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="jam_mulai" type="xs:string" minOccurs="0"/>
+<xs:element name="jam_selesai" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -189,18 +189,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="ClaimTicketAcara">
-<xs:sequence>
-<xs:element name="userId" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="ClaimTicketAcaraResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="CekKetersediaanSlotParkir">
 <xs:sequence>
 <xs:element name="parkir_id" type="xs:int"/>
@@ -211,6 +199,18 @@
 </xs:complexType>
 
 <xs:complexType name="CekKetersediaanSlotParkirResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ClaimTicketAcara">
+<xs:sequence>
+<xs:element name="NotaAcaraId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ClaimTicketAcaraResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
@@ -242,6 +242,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getAcara">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAcaraResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:acara" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="TambahNotaParkir">
 <xs:sequence>
 <xs:element name="idUser" type="xs:int"/>
@@ -255,16 +265,6 @@
 <xs:complexType name="TambahNotaParkirResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getAcara">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getAcaraResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:acara" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 

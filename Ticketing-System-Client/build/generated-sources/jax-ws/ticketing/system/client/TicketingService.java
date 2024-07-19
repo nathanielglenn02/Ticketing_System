@@ -27,7 +27,114 @@ public interface TicketingService {
 
     /**
      * 
-     * @param password
+     * @param userId
+     * @return
+     *     returns java.util.List<ticketing.system.client.NotaAcara>
+     */
+    @WebMethod(operationName = "BacaDataNotaAcaraBelumKlaim")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "BacaDataNotaAcaraBelumKlaim", targetNamespace = "http://server.com/", className = "ticketing.system.client.BacaDataNotaAcaraBelumKlaim")
+    @ResponseWrapper(localName = "BacaDataNotaAcaraBelumKlaimResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.BacaDataNotaAcaraBelumKlaimResponse")
+    @Action(input = "http://server.com/TicketingService/BacaDataNotaAcaraBelumKlaimRequest", output = "http://server.com/TicketingService/BacaDataNotaAcaraBelumKlaimResponse")
+    public List<NotaAcara> bacaDataNotaAcaraBelumKlaim(
+        @WebParam(name = "userId", targetNamespace = "")
+        int userId);
+
+    /**
+     * 
+     * @param userId
+     * @return
+     *     returns java.util.List<ticketing.system.client.NotaAcara>
+     */
+    @WebMethod(operationName = "BacaDataNotaAcara")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "BacaDataNotaAcara", targetNamespace = "http://server.com/", className = "ticketing.system.client.BacaDataNotaAcara")
+    @ResponseWrapper(localName = "BacaDataNotaAcaraResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.BacaDataNotaAcaraResponse")
+    @Action(input = "http://server.com/TicketingService/BacaDataNotaAcaraRequest", output = "http://server.com/TicketingService/BacaDataNotaAcaraResponse")
+    public List<NotaAcara> bacaDataNotaAcara(
+        @WebParam(name = "userId", targetNamespace = "")
+        int userId);
+
+    /**
+     * 
+     * @param parkirId
+     * @param jamParkirId
+     * @param kode
+     * @param tanggalBooking
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "CekKetersediaanSlotParkir")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "CekKetersediaanSlotParkir", targetNamespace = "http://server.com/", className = "ticketing.system.client.CekKetersediaanSlotParkir")
+    @ResponseWrapper(localName = "CekKetersediaanSlotParkirResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.CekKetersediaanSlotParkirResponse")
+    @Action(input = "http://server.com/TicketingService/CekKetersediaanSlotParkirRequest", output = "http://server.com/TicketingService/CekKetersediaanSlotParkirResponse")
+    public Boolean cekKetersediaanSlotParkir(
+        @WebParam(name = "parkir_id", targetNamespace = "")
+        int parkirId,
+        @WebParam(name = "kode", targetNamespace = "")
+        String kode,
+        @WebParam(name = "jam_parkir_id", targetNamespace = "")
+        int jamParkirId,
+        @WebParam(name = "tanggal_booking", targetNamespace = "")
+        String tanggalBooking);
+
+    /**
+     * 
+     * @param notaAcaraId
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "ClaimTicketAcara")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ClaimTicketAcara", targetNamespace = "http://server.com/", className = "ticketing.system.client.ClaimTicketAcara")
+    @ResponseWrapper(localName = "ClaimTicketAcaraResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.ClaimTicketAcaraResponse")
+    @Action(input = "http://server.com/TicketingService/ClaimTicketAcaraRequest", output = "http://server.com/TicketingService/ClaimTicketAcaraResponse")
+    public Boolean claimTicketAcara(
+        @WebParam(name = "NotaAcaraId", targetNamespace = "")
+        int notaAcaraId);
+
+    /**
+     * 
+     * @param idUser
+     * @param jumlah
+     * @param idAcara
+     * @return
+     *     returns ticketing.system.client.NotaAcara
+     */
+    @WebMethod(operationName = "TambahNotaAcara")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "TambahNotaAcara", targetNamespace = "http://server.com/", className = "ticketing.system.client.TambahNotaAcara")
+    @ResponseWrapper(localName = "TambahNotaAcaraResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.TambahNotaAcaraResponse")
+    @Action(input = "http://server.com/TicketingService/TambahNotaAcaraRequest", output = "http://server.com/TicketingService/TambahNotaAcaraResponse")
+    public NotaAcara tambahNotaAcara(
+        @WebParam(name = "idUser", targetNamespace = "")
+        int idUser,
+        @WebParam(name = "idAcara", targetNamespace = "")
+        int idAcara,
+        @WebParam(name = "jumlah", targetNamespace = "")
+        int jumlah);
+
+    /**
+     * 
+     * @param jumlah
+     * @param usersId
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "TambahTopUp")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "TambahTopUp", targetNamespace = "http://server.com/", className = "ticketing.system.client.TambahTopUp")
+    @ResponseWrapper(localName = "TambahTopUpResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.TambahTopUpResponse")
+    @Action(input = "http://server.com/TicketingService/TambahTopUpRequest", output = "http://server.com/TicketingService/TambahTopUpResponse")
+    public Boolean tambahTopUp(
+        @WebParam(name = "jumlah", targetNamespace = "")
+        double jumlah,
+        @WebParam(name = "users_id", targetNamespace = "")
+        int usersId);
+
+    /**
+     * 
      * @param noKtp
      * @param id
      * @param email
@@ -45,8 +152,6 @@ public interface TicketingService {
         int id,
         @WebParam(name = "username", targetNamespace = "")
         String username,
-        @WebParam(name = "password", targetNamespace = "")
-        String password,
         @WebParam(name = "noKtp", targetNamespace = "")
         String noKtp,
         @WebParam(name = "email", targetNamespace = "")
@@ -54,18 +159,27 @@ public interface TicketingService {
 
     /**
      * 
-     * @param id
      * @return
-     *     returns java.util.List<ticketing.system.client.HistoryTransaksi>
+     *     returns java.util.List<ticketing.system.client.Acara>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "dataHistoryTransaksi", targetNamespace = "http://server.com/", className = "ticketing.system.client.DataHistoryTransaksi")
-    @ResponseWrapper(localName = "dataHistoryTransaksiResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.DataHistoryTransaksiResponse")
-    @Action(input = "http://server.com/TicketingService/dataHistoryTransaksiRequest", output = "http://server.com/TicketingService/dataHistoryTransaksiResponse")
-    public List<HistoryTransaksi> dataHistoryTransaksi(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
+    @RequestWrapper(localName = "getAcara", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetAcara")
+    @ResponseWrapper(localName = "getAcaraResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetAcaraResponse")
+    @Action(input = "http://server.com/TicketingService/getAcaraRequest", output = "http://server.com/TicketingService/getAcaraResponse")
+    public List<Acara> getAcara();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<ticketing.system.client.Parkir>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getParkir", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetParkir")
+    @ResponseWrapper(localName = "getParkirResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetParkirResponse")
+    @Action(input = "http://server.com/TicketingService/getParkirRequest", output = "http://server.com/TicketingService/getParkirResponse")
+    public List<Parkir> getParkir();
 
     /**
      * 
@@ -81,18 +195,6 @@ public interface TicketingService {
     public User getUserById(
         @WebParam(name = "id", targetNamespace = "")
         int id);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<ticketing.system.client.Acara>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAcara", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetAcara")
-    @ResponseWrapper(localName = "getAcaraResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetAcaraResponse")
-    @Action(input = "http://server.com/TicketingService/getAcaraRequest", output = "http://server.com/TicketingService/getAcaraResponse")
-    public List<Acara> getAcara();
 
     /**
      * 
@@ -126,30 +228,6 @@ public interface TicketingService {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<ticketing.system.client.Parkir>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getParkir", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetParkir")
-    @ResponseWrapper(localName = "getParkirResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetParkirResponse")
-    @Action(input = "http://server.com/TicketingService/getParkirRequest", output = "http://server.com/TicketingService/getParkirResponse")
-    public List<Parkir> getParkir();
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<ticketing.system.client.JamParkir>
-     */
-    @WebMethod(operationName = "getJam_Parkir")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getJam_Parkir", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetJamParkir")
-    @ResponseWrapper(localName = "getJam_ParkirResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetJamParkirResponse")
-    @Action(input = "http://server.com/TicketingService/getJam_ParkirRequest", output = "http://server.com/TicketingService/getJam_ParkirResponse")
-    public List<JamParkir> getJamParkir();
-
-    /**
-     * 
      * @param idUser
      * @param parkirId
      * @param jamParkirId
@@ -174,5 +252,32 @@ public interface TicketingService {
         String slotParkirKode,
         @WebParam(name = "jam_parkir_id", targetNamespace = "")
         int jamParkirId);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<ticketing.system.client.JamParkir>
+     */
+    @WebMethod(operationName = "getJam_Parkir")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getJam_Parkir", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetJamParkir")
+    @ResponseWrapper(localName = "getJam_ParkirResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.GetJamParkirResponse")
+    @Action(input = "http://server.com/TicketingService/getJam_ParkirRequest", output = "http://server.com/TicketingService/getJam_ParkirResponse")
+    public List<JamParkir> getJamParkir();
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns java.util.List<ticketing.system.client.HistoryTransaksi>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "dataHistoryTransaksi", targetNamespace = "http://server.com/", className = "ticketing.system.client.DataHistoryTransaksi")
+    @ResponseWrapper(localName = "dataHistoryTransaksiResponse", targetNamespace = "http://server.com/", className = "ticketing.system.client.DataHistoryTransaksiResponse")
+    @Action(input = "http://server.com/TicketingService/dataHistoryTransaksiRequest", output = "http://server.com/TicketingService/dataHistoryTransaksiResponse")
+    public List<HistoryTransaksi> dataHistoryTransaksi(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
 
 }

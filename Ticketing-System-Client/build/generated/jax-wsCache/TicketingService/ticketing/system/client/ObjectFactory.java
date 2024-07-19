@@ -24,8 +24,20 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _BacaDataNotaAcara_QNAME = new QName("http://server.com/", "BacaDataNotaAcara");
+    private final static QName _BacaDataNotaAcaraBelumKlaim_QNAME = new QName("http://server.com/", "BacaDataNotaAcaraBelumKlaim");
+    private final static QName _BacaDataNotaAcaraBelumKlaimResponse_QNAME = new QName("http://server.com/", "BacaDataNotaAcaraBelumKlaimResponse");
+    private final static QName _BacaDataNotaAcaraResponse_QNAME = new QName("http://server.com/", "BacaDataNotaAcaraResponse");
+    private final static QName _CekKetersediaanSlotParkir_QNAME = new QName("http://server.com/", "CekKetersediaanSlotParkir");
+    private final static QName _CekKetersediaanSlotParkirResponse_QNAME = new QName("http://server.com/", "CekKetersediaanSlotParkirResponse");
+    private final static QName _ClaimTicketAcara_QNAME = new QName("http://server.com/", "ClaimTicketAcara");
+    private final static QName _ClaimTicketAcaraResponse_QNAME = new QName("http://server.com/", "ClaimTicketAcaraResponse");
+    private final static QName _TambahNotaAcara_QNAME = new QName("http://server.com/", "TambahNotaAcara");
+    private final static QName _TambahNotaAcaraResponse_QNAME = new QName("http://server.com/", "TambahNotaAcaraResponse");
     private final static QName _TambahNotaParkir_QNAME = new QName("http://server.com/", "TambahNotaParkir");
     private final static QName _TambahNotaParkirResponse_QNAME = new QName("http://server.com/", "TambahNotaParkirResponse");
+    private final static QName _TambahTopUp_QNAME = new QName("http://server.com/", "TambahTopUp");
+    private final static QName _TambahTopUpResponse_QNAME = new QName("http://server.com/", "TambahTopUpResponse");
     private final static QName _DataHistoryTransaksi_QNAME = new QName("http://server.com/", "dataHistoryTransaksi");
     private final static QName _DataHistoryTransaksiResponse_QNAME = new QName("http://server.com/", "dataHistoryTransaksiResponse");
     private final static QName _GetAcara_QNAME = new QName("http://server.com/", "getAcara");
@@ -51,6 +63,86 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link BacaDataNotaAcara }
+     * 
+     */
+    public BacaDataNotaAcara createBacaDataNotaAcara() {
+        return new BacaDataNotaAcara();
+    }
+
+    /**
+     * Create an instance of {@link BacaDataNotaAcaraBelumKlaim }
+     * 
+     */
+    public BacaDataNotaAcaraBelumKlaim createBacaDataNotaAcaraBelumKlaim() {
+        return new BacaDataNotaAcaraBelumKlaim();
+    }
+
+    /**
+     * Create an instance of {@link BacaDataNotaAcaraBelumKlaimResponse }
+     * 
+     */
+    public BacaDataNotaAcaraBelumKlaimResponse createBacaDataNotaAcaraBelumKlaimResponse() {
+        return new BacaDataNotaAcaraBelumKlaimResponse();
+    }
+
+    /**
+     * Create an instance of {@link BacaDataNotaAcaraResponse }
+     * 
+     */
+    public BacaDataNotaAcaraResponse createBacaDataNotaAcaraResponse() {
+        return new BacaDataNotaAcaraResponse();
+    }
+
+    /**
+     * Create an instance of {@link CekKetersediaanSlotParkir }
+     * 
+     */
+    public CekKetersediaanSlotParkir createCekKetersediaanSlotParkir() {
+        return new CekKetersediaanSlotParkir();
+    }
+
+    /**
+     * Create an instance of {@link CekKetersediaanSlotParkirResponse }
+     * 
+     */
+    public CekKetersediaanSlotParkirResponse createCekKetersediaanSlotParkirResponse() {
+        return new CekKetersediaanSlotParkirResponse();
+    }
+
+    /**
+     * Create an instance of {@link ClaimTicketAcara }
+     * 
+     */
+    public ClaimTicketAcara createClaimTicketAcara() {
+        return new ClaimTicketAcara();
+    }
+
+    /**
+     * Create an instance of {@link ClaimTicketAcaraResponse }
+     * 
+     */
+    public ClaimTicketAcaraResponse createClaimTicketAcaraResponse() {
+        return new ClaimTicketAcaraResponse();
+    }
+
+    /**
+     * Create an instance of {@link TambahNotaAcara }
+     * 
+     */
+    public TambahNotaAcara createTambahNotaAcara() {
+        return new TambahNotaAcara();
+    }
+
+    /**
+     * Create an instance of {@link TambahNotaAcaraResponse }
+     * 
+     */
+    public TambahNotaAcaraResponse createTambahNotaAcaraResponse() {
+        return new TambahNotaAcaraResponse();
+    }
+
+    /**
      * Create an instance of {@link TambahNotaParkir }
      * 
      */
@@ -64,6 +156,22 @@ public class ObjectFactory {
      */
     public TambahNotaParkirResponse createTambahNotaParkirResponse() {
         return new TambahNotaParkirResponse();
+    }
+
+    /**
+     * Create an instance of {@link TambahTopUp }
+     * 
+     */
+    public TambahTopUp createTambahTopUp() {
+        return new TambahTopUp();
+    }
+
+    /**
+     * Create an instance of {@link TambahTopUpResponse }
+     * 
+     */
+    public TambahTopUpResponse createTambahTopUpResponse() {
+        return new TambahTopUpResponse();
     }
 
     /**
@@ -195,14 +303,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Acara }
-     * 
-     */
-    public Acara createAcara() {
-        return new Acara();
-    }
-
-    /**
      * Create an instance of {@link SlotParkir }
      * 
      */
@@ -227,6 +327,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NotaAcara }
+     * 
+     */
+    public NotaAcara createNotaAcara() {
+        return new NotaAcara();
+    }
+
+    /**
+     * Create an instance of {@link Acara }
+     * 
+     */
+    public Acara createAcara() {
+        return new Acara();
+    }
+
+    /**
      * Create an instance of {@link User }
      * 
      */
@@ -243,19 +359,141 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NotaAcara }
-     * 
-     */
-    public NotaAcara createNotaAcara() {
-        return new NotaAcara();
-    }
-
-    /**
      * Create an instance of {@link NotaParkir }
      * 
      */
     public NotaParkir createNotaParkir() {
         return new NotaParkir();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BacaDataNotaAcara }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BacaDataNotaAcara }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "BacaDataNotaAcara")
+    public JAXBElement<BacaDataNotaAcara> createBacaDataNotaAcara(BacaDataNotaAcara value) {
+        return new JAXBElement<BacaDataNotaAcara>(_BacaDataNotaAcara_QNAME, BacaDataNotaAcara.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BacaDataNotaAcaraBelumKlaim }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BacaDataNotaAcaraBelumKlaim }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "BacaDataNotaAcaraBelumKlaim")
+    public JAXBElement<BacaDataNotaAcaraBelumKlaim> createBacaDataNotaAcaraBelumKlaim(BacaDataNotaAcaraBelumKlaim value) {
+        return new JAXBElement<BacaDataNotaAcaraBelumKlaim>(_BacaDataNotaAcaraBelumKlaim_QNAME, BacaDataNotaAcaraBelumKlaim.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BacaDataNotaAcaraBelumKlaimResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BacaDataNotaAcaraBelumKlaimResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "BacaDataNotaAcaraBelumKlaimResponse")
+    public JAXBElement<BacaDataNotaAcaraBelumKlaimResponse> createBacaDataNotaAcaraBelumKlaimResponse(BacaDataNotaAcaraBelumKlaimResponse value) {
+        return new JAXBElement<BacaDataNotaAcaraBelumKlaimResponse>(_BacaDataNotaAcaraBelumKlaimResponse_QNAME, BacaDataNotaAcaraBelumKlaimResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BacaDataNotaAcaraResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BacaDataNotaAcaraResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "BacaDataNotaAcaraResponse")
+    public JAXBElement<BacaDataNotaAcaraResponse> createBacaDataNotaAcaraResponse(BacaDataNotaAcaraResponse value) {
+        return new JAXBElement<BacaDataNotaAcaraResponse>(_BacaDataNotaAcaraResponse_QNAME, BacaDataNotaAcaraResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CekKetersediaanSlotParkir }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link CekKetersediaanSlotParkir }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "CekKetersediaanSlotParkir")
+    public JAXBElement<CekKetersediaanSlotParkir> createCekKetersediaanSlotParkir(CekKetersediaanSlotParkir value) {
+        return new JAXBElement<CekKetersediaanSlotParkir>(_CekKetersediaanSlotParkir_QNAME, CekKetersediaanSlotParkir.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CekKetersediaanSlotParkirResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link CekKetersediaanSlotParkirResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "CekKetersediaanSlotParkirResponse")
+    public JAXBElement<CekKetersediaanSlotParkirResponse> createCekKetersediaanSlotParkirResponse(CekKetersediaanSlotParkirResponse value) {
+        return new JAXBElement<CekKetersediaanSlotParkirResponse>(_CekKetersediaanSlotParkirResponse_QNAME, CekKetersediaanSlotParkirResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ClaimTicketAcara }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ClaimTicketAcara }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "ClaimTicketAcara")
+    public JAXBElement<ClaimTicketAcara> createClaimTicketAcara(ClaimTicketAcara value) {
+        return new JAXBElement<ClaimTicketAcara>(_ClaimTicketAcara_QNAME, ClaimTicketAcara.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ClaimTicketAcaraResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link ClaimTicketAcaraResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "ClaimTicketAcaraResponse")
+    public JAXBElement<ClaimTicketAcaraResponse> createClaimTicketAcaraResponse(ClaimTicketAcaraResponse value) {
+        return new JAXBElement<ClaimTicketAcaraResponse>(_ClaimTicketAcaraResponse_QNAME, ClaimTicketAcaraResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TambahNotaAcara }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TambahNotaAcara }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "TambahNotaAcara")
+    public JAXBElement<TambahNotaAcara> createTambahNotaAcara(TambahNotaAcara value) {
+        return new JAXBElement<TambahNotaAcara>(_TambahNotaAcara_QNAME, TambahNotaAcara.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TambahNotaAcaraResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TambahNotaAcaraResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "TambahNotaAcaraResponse")
+    public JAXBElement<TambahNotaAcaraResponse> createTambahNotaAcaraResponse(TambahNotaAcaraResponse value) {
+        return new JAXBElement<TambahNotaAcaraResponse>(_TambahNotaAcaraResponse_QNAME, TambahNotaAcaraResponse.class, null, value);
     }
 
     /**
@@ -282,6 +520,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server.com/", name = "TambahNotaParkirResponse")
     public JAXBElement<TambahNotaParkirResponse> createTambahNotaParkirResponse(TambahNotaParkirResponse value) {
         return new JAXBElement<TambahNotaParkirResponse>(_TambahNotaParkirResponse_QNAME, TambahNotaParkirResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TambahTopUp }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TambahTopUp }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "TambahTopUp")
+    public JAXBElement<TambahTopUp> createTambahTopUp(TambahTopUp value) {
+        return new JAXBElement<TambahTopUp>(_TambahTopUp_QNAME, TambahTopUp.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TambahTopUpResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link TambahTopUpResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.com/", name = "TambahTopUpResponse")
+    public JAXBElement<TambahTopUpResponse> createTambahTopUpResponse(TambahTopUpResponse value) {
+        return new JAXBElement<TambahTopUpResponse>(_TambahTopUpResponse_QNAME, TambahTopUpResponse.class, null, value);
     }
 
     /**
