@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/Ticketing-System-Server/TicketingService?WSDL" uri="xml-resources/web-service-references/TicketingService/wsdl/localhost_8080/Ticketing-System-Server/TicketingService.wsdl"/>
+    <system systemId="http://192.168.3.198:8080/Ticketing-System-Server/TicketingService?WSDL" uri="xml-resources/web-service-references/TicketingService/wsdl/192.168.3.198_8080/Ticketing-System-Server/TicketingService.wsdl"/>
+    <system systemId="http://192.168.3.198:8080/Ticketing-System-Server/TicketingService?xsd=1" uri="xml-resources/web-service-references/TicketingService/wsdl/192.168.3.198_8080/Ticketing-System-Server/TicketingService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Ticketing-System-Server/TicketingService?wsdl" uri="xml-resources/web-service-references/TicketingService/wsdl/localhost_8080/Ticketing-System-Server/TicketingService.wsdl"/>
+    <system systemId="http://localhost:8080/Ticketing-System-Server/TicketingService?xsd=1" uri="xml-resources/web-service-references/TicketingService/wsdl/localhost_8080/Ticketing-System-Server/TicketingService.xsd_1.xsd"/>
+</catalog>

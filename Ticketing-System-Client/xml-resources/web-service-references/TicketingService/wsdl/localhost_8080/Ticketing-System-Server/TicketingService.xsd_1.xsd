@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://server.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://server.com/">
+
+<xs:element name="BacaDataNotaAcara" type="tns:BacaDataNotaAcara"/>
+
+<xs:element name="BacaDataNotaAcaraBelumKlaim" type="tns:BacaDataNotaAcaraBelumKlaim"/>
+
+<xs:element name="BacaDataNotaAcaraBelumKlaimResponse" type="tns:BacaDataNotaAcaraBelumKlaimResponse"/>
+
+<xs:element name="BacaDataNotaAcaraResponse" type="tns:BacaDataNotaAcaraResponse"/>
+
+<xs:element name="CekKetersediaanSlotParkir" type="tns:CekKetersediaanSlotParkir"/>
+
+<xs:element name="CekKetersediaanSlotParkirResponse" type="tns:CekKetersediaanSlotParkirResponse"/>
+
+<xs:element name="ClaimTicketAcara" type="tns:ClaimTicketAcara"/>
+
+<xs:element name="ClaimTicketAcaraResponse" type="tns:ClaimTicketAcaraResponse"/>
+
+<xs:element name="TambahNotaAcara" type="tns:TambahNotaAcara"/>
+
+<xs:element name="TambahNotaAcaraResponse" type="tns:TambahNotaAcaraResponse"/>
+
+<xs:element name="TambahNotaParkir" type="tns:TambahNotaParkir"/>
+
+<xs:element name="TambahNotaParkirResponse" type="tns:TambahNotaParkirResponse"/>
+
+<xs:element name="TambahTopUp" type="tns:TambahTopUp"/>
+
+<xs:element name="TambahTopUpResponse" type="tns:TambahTopUpResponse"/>
+
+<xs:element name="dataHistoryTransaksi" type="tns:dataHistoryTransaksi"/>
+
+<xs:element name="dataHistoryTransaksiResponse" type="tns:dataHistoryTransaksiResponse"/>
+
+<xs:element name="getAcara" type="tns:getAcara"/>
+
+<xs:element name="getAcaraByNama" type="tns:getAcaraByNama"/>
+
+<xs:element name="getAcaraByNamaResponse" type="tns:getAcaraByNamaResponse"/>
+
+<xs:element name="getAcaraResponse" type="tns:getAcaraResponse"/>
+
+<xs:element name="getJam_Parkir" type="tns:getJam_Parkir"/>
+
+<xs:element name="getJam_ParkirResponse" type="tns:getJam_ParkirResponse"/>
+
+<xs:element name="getParkir" type="tns:getParkir"/>
+
+<xs:element name="getParkirResponse" type="tns:getParkirResponse"/>
+
+<xs:element name="getSlotParkir" type="tns:getSlotParkir"/>
+
+<xs:element name="getSlotParkirResponse" type="tns:getSlotParkirResponse"/>
+
+<xs:element name="getUserById" type="tns:getUserById"/>
+
+<xs:element name="getUserByIdResponse" type="tns:getUserByIdResponse"/>
+
+<xs:element name="updateUser" type="tns:updateUser"/>
+
+<xs:element name="updateUserResponse" type="tns:updateUserResponse"/>
+
+<xs:complexType name="getJam_Parkir">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getJam_ParkirResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:jamParkir" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="jamParkir">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="jam_mulai" type="xs:string" minOccurs="0"/>
+<xs:element name="jam_selesai" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSlotParkir">
+<xs:sequence>
+<xs:element name="idParkir" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSlotParkirResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:slotParkir" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="slotParkir">
+<xs:sequence>
+<xs:element name="harga" type="xs:double"/>
+<xs:element name="kode" type="xs:string" minOccurs="0"/>
+<xs:element name="parkir" type="tns:parkir" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="parkir">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="lokasi" type="xs:string" minOccurs="0"/>
+<xs:element name="nama" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BacaDataNotaAcara">
+<xs:sequence>
+<xs:element name="userId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BacaDataNotaAcaraResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:notaAcara" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="notaAcara">
+<xs:sequence>
+<xs:element name="acara" type="tns:acara" minOccurs="0"/>
+<xs:element name="harga" type="xs:double"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="jumlah" type="xs:int"/>
+<xs:element name="status" type="xs:boolean" minOccurs="0"/>
+<xs:element name="tanggal_Transaksi" type="xs:string" minOccurs="0"/>
+<xs:element name="user" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acara">
+<xs:sequence>
+<xs:element name="deskripsi" type="xs:string" minOccurs="0"/>
+<xs:element name="harga" type="xs:double"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="lokasi" type="xs:string" minOccurs="0"/>
+<xs:element name="nama" type="xs:string" minOccurs="0"/>
+<xs:element name="tanggalAcara" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="user">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="noTelp" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="saldo" type="xs:double"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserById">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUserByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getParkir">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getParkirResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:parkir" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateUser">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="noKtp" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateUserResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ClaimTicketAcara">
+<xs:sequence>
+<xs:element name="userId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ClaimTicketAcaraResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CekKetersediaanSlotParkir">
+<xs:sequence>
+<xs:element name="parkir_id" type="xs:int"/>
+<xs:element name="kode" type="xs:string" minOccurs="0"/>
+<xs:element name="jam_parkir_id" type="xs:int"/>
+<xs:element name="tanggal_booking" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CekKetersediaanSlotParkirResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAcaraByNama">
+<xs:sequence>
+<xs:element name="nama" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAcaraByNamaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:acara" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TambahNotaAcara">
+<xs:sequence>
+<xs:element name="idUser" type="xs:int"/>
+<xs:element name="idAcara" type="xs:int"/>
+<xs:element name="jumlah" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TambahNotaAcaraResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:notaAcara" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TambahNotaParkir">
+<xs:sequence>
+<xs:element name="idUser" type="xs:int"/>
+<xs:element name="tanggal_booking" type="xs:string" minOccurs="0"/>
+<xs:element name="parkir_id" type="xs:int"/>
+<xs:element name="slot_parkir_kode" type="xs:string" minOccurs="0"/>
+<xs:element name="jam_parkir_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TambahNotaParkirResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAcara">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAcaraResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:acara" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TambahTopUp">
+<xs:sequence>
+<xs:element name="jumlah" type="xs:double"/>
+<xs:element name="users_id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TambahTopUpResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BacaDataNotaAcaraBelumKlaim">
+<xs:sequence>
+<xs:element name="userId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BacaDataNotaAcaraBelumKlaimResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:notaAcara" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dataHistoryTransaksi">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dataHistoryTransaksiResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:historyTransaksi" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="historyTransaksi">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="is_topup" type="xs:boolean" minOccurs="0"/>
+<xs:element name="jumlah" type="xs:double"/>
+<xs:element name="notaAcara" type="tns:notaAcara" minOccurs="0"/>
+<xs:element name="notaParkir" type="tns:notaParkir" minOccurs="0"/>
+<xs:element name="tanggal_topup" type="xs:string" minOccurs="0"/>
+<xs:element name="user" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="notaParkir">
+<xs:sequence>
+<xs:element name="harga" type="xs:double" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="jam_parkir" type="tns:jamParkir" minOccurs="0"/>
+<xs:element name="slot_parkir" type="tns:slotParkir" minOccurs="0"/>
+<xs:element name="tanggal_booking" type="xs:string" minOccurs="0"/>
+<xs:element name="tanggal_transaksi" type="xs:string" minOccurs="0"/>
+<xs:element name="user" type="tns:user" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
